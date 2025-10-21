@@ -1,5 +1,15 @@
-import {defineConfig} from 'cypress'
+import { defineConfig } from 'cypress'
 
 export default defineConfig({
-    defaultCommandTimeout: 10000,
-});
+  e2e: {
+    baseUrl: 'http://localhost:5173',
+    setupNodeEvents(on, config) {
+    },
+  },
+  video: false,
+  screenshotOnRunFailure: true,
+  viewportWidth: 1440,
+  viewportHeight: 900,
+  defaultCommandTimeout: 10000,
+  pageLoadTimeout: 60000,
+})
